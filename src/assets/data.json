@@ -1,0 +1,80 @@
+[
+  {
+    "ComponentTypeID": "SP100",
+    "ServiceOrderID": "SO123",
+    "Components": [
+      { "ComponentID": 1, "SerialNumber": "SN123" },
+      { "ComponentID": 2, "SerialNumber": "SN124" },
+      { "ComponentID": 3, "SerialNumber": "SN126" },
+      { "ComponentID": 4, "SerialNumber": "SN127" }
+    ],
+    "QualityStatements": [
+      {
+        "QualityStatementID": 1,
+        "Statement": "Valve Status OK",
+        "OutcomeTypeID": "flag",
+        "Values": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false
+        }
+      },
+      {
+        "QualityStatementID": 2,
+        "Statement": "Incoming Condition",
+        "OutcomeTypeID": "text",
+        "Values": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": ""
+        }
+      },
+      {
+        "QualityStatementID": 3,
+        "Statement": "Seal Clearance (mm)",
+        "OutcomeTypeID": "number",
+        "Values": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        }
+      },
+      {
+        "QualityStatementID": 4,
+        "Statement": "Seal Damage Photo",
+        "OutcomeTypeID": "picture",
+        "Values": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        }
+      },
+      {
+        "QualityStatementID": 5,
+        "Statement": "Valve rotation (degrees)",
+        "OutcomeTypeID": "number",
+        "Values": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        }
+      },
+      {
+        "QualityStatementID": 6,
+        "Statement": "Surface Scratches Present",
+        "OutcomeTypeID": "flag",
+        "Values": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false
+        }
+      }
+    ]
+  }
+]

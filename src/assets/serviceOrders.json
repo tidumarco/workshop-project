@@ -1,0 +1,30 @@
+[
+  {
+    "ServiceOrderID": "SO123",
+    "ComponentTypeID": "SP100",
+    "Components": [
+      { "ComponentID": "C1", "SerialNumber": "SN123", "ComponentTypeID": "SP100" },
+      { "ComponentID": "C2", "SerialNumber": "SN124", "ComponentTypeID": "SP100" },
+      { "ComponentID": "C3", "SerialNumber": "SN126", "ComponentTypeID": "SP100" },
+      { "ComponentID": "C4", "SerialNumber": "SN127", "ComponentTypeID": "SP100" }
+    ]
+  },
+  {
+    "ServiceOrderID": "SO124",
+    "ComponentTypeID": "SP200",
+    "Components": [
+      { "ComponentID": "C7", "SerialNumber": "SN223", "ComponentTypeID": "SP200" },
+      { "ComponentID": "C8", "SerialNumber": "SN224", "ComponentTypeID": "SP200" },
+      { "ComponentID": "C9", "SerialNumber": "SN225", "ComponentTypeID": "SP200" }
+    ]
+  },
+  {
+    "ServiceOrderID": "SO125",
+    "ComponentTypeID": "SP300",
+    "Components": [
+      { "ComponentID": "C6", "SerialNumber": "SN223", "ComponentTypeID": "SP300" },
+      { "ComponentID": "C10", "SerialNumber": "SN224", "ComponentTypeID": "SP300" },
+      { "ComponentID": "C12", "SerialNumber": "SN225", "ComponentTypeID": "SP300" }
+    ]
+  }
+]

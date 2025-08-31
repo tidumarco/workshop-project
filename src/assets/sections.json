@@ -1,0 +1,94 @@
+[
+  {
+    "SectionID": "S1",
+    "SectionName": "INCOMING CONDITION",
+    "Groups": [
+      {
+        "GroupID": "G1",
+        "GroupName": "VALVES",
+        "QualityStatements": [
+          {
+            "QualityStatementID": 1,
+            "ComponentTypeID": "SP100",
+            "Description": "Valve Status OK",
+            "GroupID": 1,
+            "OutcomeTypeID": "flag"
+          },
+          {
+            "QualityStatementID": 2,
+            "ComponentTypeID": "SP100",
+            "Description": "Incoming Condition",
+            "GroupID": 1,
+            "OutcomeTypeID": "text"
+          }
+        ]
+      },
+      {
+        "GroupID": "G2",
+        "GroupName": "VALVE GUIDES",
+        "QualityStatements": [
+          {
+            "QualityStatementID": 3,
+            "ComponentTypeID": "SP200",
+            "Description": "Seal Clearance (mm)",
+            "GroupID": 2,
+            "OutcomeTypeID": "number"
+          },
+          {
+            "QualityStatementID": 4,
+            "ComponentTypeID": "SP200",
+            "Description": "Seal Damage Photo",
+            "GroupID": 2,
+            "OutcomeTypeID": "picture"
+          }
+        ]
+      },
+      {
+        "GroupID": "G3",
+        "GroupName": "VALVE ROTATORS",
+        "QualityStatements": [
+          {
+            "QualityStatementID": 3,
+            "ComponentTypeID": "SP300",
+            "Description": "Valve rotation (degrees)",
+            "GroupID": 2,
+            "OutcomeTypeID": "number"
+          },
+          {
+            "QualityStatementID": 4,
+            "ComponentTypeID": "SP300",
+            "Description": "Seal Damage Photo",
+            "GroupID": 2,
+            "OutcomeTypeID": "picture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "SectionID": "S2",
+    "SectionName": "RECOMMENDATION",
+    "Groups": [
+      {
+        "GroupID": "G3",
+        "GroupName": "SURFACE CHECK",
+        "QualityStatements": [
+          {
+            "QualityStatementID": 5,
+            "ComponentTypeID": 102,
+            "Description": "Surface Scratches Present",
+            "GroupID": 3,
+            "OutcomeTypeID": "flag"
+          },
+          {
+            "QualityStatementID": 6,
+            "ComponentTypeID": 102,
+            "Description": "Surface Photo",
+            "GroupID": 3,
+            "OutcomeTypeID": "picture"
+          }
+        ]
+      }
+    ]
+  }
+]
