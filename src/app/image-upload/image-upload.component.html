@@ -1,0 +1,16 @@
+<div class="upload-container">
+  <input type="file" #fileInput hidden (change)="onFileSelected($event)" accept="image/*" />
+  <button mat-raised-button color="accent" (click)="fileInput.click()">Upload Image</button>
+
+  <div class="thumbnail-container">
+    <img *ngIf="localPreview || thumbnailSrc" [src]="localPreview || thumbnailSrc"
+         [matTooltip]="
+    originalSizeKB && compressedSizeKB
+      ? 'Original: ' + originalSizeKB + ' KB\nCompressed: ' + compressedSizeKB + ' KB'
+      : ''"
+         matTooltipPosition="after"
+         alt="Compressed Preview"/>
+    <mat-progress-bar *ngIf="uploading" mode="indeterminate"></mat-progress-bar>
+  </div>
+</div>
+
