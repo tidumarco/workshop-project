@@ -1,11 +1,10 @@
-import {QualityStatement} from './QualityStatement';
+import {QualityStatementData} from './QualityStatement';
 
 export class Group {
   constructor(
     public GroupID: string,
     public SectionID: string,
     public GroupName: string,
-    public QualityStatements: QualityStatement[]
+    public QualityStatements: QualityStatementData[]
   ) {}
 }
-

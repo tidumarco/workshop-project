@@ -10,12 +10,12 @@
 }
 
 input[type="file"] {
-  display: none; /* hide native file input */
+  display: none;
 }
 
 .upload-button {
   padding: 8px 12px;
-  background-color: #1976d2; /* Angular Material primary blue */
+  background-color: #1976d2;
   color: #fff;
   font-size: 0.9rem;
   font-weight: 500;
@@ -31,11 +31,11 @@ input[type="file"] {
 }
 
 .thumbnail-container {
-  height: 80px;     /* fixed height */
-  width: 200px;      /* fixed width */
+  height: 80px;
+  width: 200px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  overflow: hidden; /* crop overflow */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,9 +43,9 @@ input[type="file"] {
 }
 
 .thumbnail-container img {
-  max-width: 200px;  /* or whatever fits your design */
+  max-width: 200px;
   max-height: 200px;
-  object-fit: cover; /* keeps center of image and crops excess */
+  object-fit: cover;
   display: block;
 }
 
@@ -53,12 +53,12 @@ input[type="file"] {
 .thumbnail {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* or cover */
+  object-fit: contain;
   border-radius: 4px;
 }
 
 ::ng-deep .mat-tooltip {
-  margin-left: -8px !important; /* decrease offset from the right */
+  margin-left: -8px !important;
 }
 
 

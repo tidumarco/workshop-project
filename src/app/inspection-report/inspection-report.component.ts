@@ -97,7 +97,4 @@ export class InspectionReportComponent implements OnInit {
 
     console.log('Cleared all text fields and images, keeping the table structure:', this.dataSource);
   }
-
-
-
 }
