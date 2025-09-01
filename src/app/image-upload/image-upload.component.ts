@@ -33,7 +33,7 @@ export class ImageUploadComponent implements OnChanges{
   ngOnChanges(changes: SimpleChanges) {
     if (changes['thumbnailSrc']) {
       if (!this.thumbnailSrc) {
-        this.localPreview = undefined;  // clear preview when no image
+        this.localPreview = undefined;
       } else {
         this.localPreview = this.thumbnailSrc;
       }
@@ -47,9 +47,6 @@ export class ImageUploadComponent implements OnChanges{
     this.uploading = true;
     this.originalSizeKB = +(file.size / 1024).toFixed(2);
 
-    const originalSizeKB = file.size / 1024;
-    console.log(`Original size: ${originalSizeKB.toFixed(2)} KB`);
-
     const reader = new FileReader();
 
     reader.onload = async (e: any) => {
@@ -57,7 +54,6 @@ export class ImageUploadComponent implements OnChanges{
         const imageDataUrl = e.target.result;
         const compressedImage = await this.imageCompress.compressFile(imageDataUrl, -1, 50, 50);
         const compressedBlob = this.dataURLtoBlob(compressedImage);
-        const compressedSizeKB = compressedBlob.size / 1024;
         this.compressedSizeKB = +(compressedBlob.size / 1024).toFixed(2);
         this.localPreview = compressedImage;
         this.pictureUploaded.emit(compressedImage);

@@ -47,9 +47,10 @@ export class InspectionReportComponent implements OnInit {
   constructor(private http: HttpClient, public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.http.get<CombinedData[]>('assets/data.json').subscribe({
+    this.http.get<CombinedData[]>('http://localhost:8080/api/combined-data').subscribe({
       next: (data) => {
         this.dataSource = data;
+        console.log("DATA LOADED FROM BACKEND:", data)
         if (this.dataSource.length > 0) {
           this.displayedColumns = ['statement', ...this.dataSource[0].Components.map(c => c.ComponentID.toString())];
         }
