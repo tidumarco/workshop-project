@@ -14,8 +14,8 @@ input[type="file"] {
 }
 
 .thumbnail-container {
-  height: 80px;
-  width: 200px;
+  height: 200px;
+  width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
@@ -26,8 +26,8 @@ input[type="file"] {
 }
 
 .thumbnail-container img {
-  max-width: 200px;
   max-height: 200px;
+  max-width: 300px;
   object-fit: cover;
   display: block;
 }
