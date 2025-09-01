@@ -50,3 +50,8 @@ tr.mat-row {
 tr.mat-row:last-child {
   border-bottom: none;
 }
+
+.upload-button {
+  display:flex;
+  margin-top: 30px;
+}
