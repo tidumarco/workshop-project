@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialog } from '@angular/material/dialog';
 import { SaveConfirmationDialogComponent } from '../save-confirmation-dialog/save-confirmation-dialog.component';
-import {NgForOf, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
+import {NgForOf, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 import {HttpClient} from '@angular/common/http';
 import {ImageUploadComponent} from '../image-upload/image-upload.component';
 import {ComponentClass} from '../models/ComponentClass';
@@ -34,7 +34,8 @@ interface CombinedData {
     NgSwitch,
     NgSwitchCase,
     ImageUploadComponent,
-    NgSwitchDefault
+    NgSwitchDefault,
+    NgIf
   ],
   templateUrl: './inspection-report.component.html',
   styleUrls: ['./inspection-report.component.css']
@@ -43,6 +44,8 @@ export class InspectionReportComponent implements OnInit {
   dataSource: CombinedData[] = [];
   displayedColumns: string[] = ['statement'];
   imagePreviews: { [componentId_qualityStatementId: string]: string } = {};
+
+  loading = true;
 
   constructor(private http: HttpClient, public dialog: MatDialog) {}
 
@@ -54,6 +57,7 @@ export class InspectionReportComponent implements OnInit {
         if (this.dataSource.length > 0) {
           this.displayedColumns = ['statement', ...this.dataSource[0].Components.map(c => c.ComponentID.toString())];
         }
+        this.loading = false;
       },
       error: (err) => console.error(err)
     });

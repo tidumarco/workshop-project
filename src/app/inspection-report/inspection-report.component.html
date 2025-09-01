@@ -1,4 +1,8 @@
-<div class="container">
+<div *ngIf="loading" class="loading-screen">
+  Loading...
+</div>
+
+<div *ngIf="!loading" class="container">
   <ng-container *ngFor="let block of dataSource">
     <h3>Service Order: {{block.ServiceOrderID}} ({{block.ComponentTypeID}})</h3>
     <table mat-table [dataSource]="block.QualityStatements" class="mat-elevation-z8">
