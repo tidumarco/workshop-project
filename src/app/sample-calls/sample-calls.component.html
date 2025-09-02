@@ -1,0 +1,62 @@
+<div class="container">
+  <mat-card>
+    <h2>Sample API Calls</h2>
+    <div class="button-group">
+
+      <div class="call-block">
+        <button *ngIf="!responses['components']" mat-raised-button color="primary" (click)="getComponents()">
+          Get components
+        </button>
+        <button *ngIf="responses['components']" mat-stroked-button color="warn" (click)="closeResponse('components')">
+          Close
+        </button>
+      </div>
+
+      <div class="call-block">
+        <button *ngIf="!responses['componentTypes']" mat-raised-button color="primary" (click)="getComponentTypes()">
+          Get component types
+        </button>
+        <button *ngIf="responses['componentTypes']" mat-stroked-button color="warn" (click)="closeResponse('componentTypes')">
+          Close
+        </button>
+      </div>
+
+      <div class="call-block">
+        <button *ngIf="!responses['purchaseOrders']" mat-raised-button color="primary" (click)="getPurchaseOrders()">
+          Get purchase orders
+        </button>
+        <button *ngIf="responses['purchaseOrders']" mat-stroked-button color="warn" (click)="closeResponse('purchaseOrders')">
+          Close
+        </button>
+      </div>
+
+      <div class="call-block">
+        <button *ngIf="!responses['qualityStatements']" mat-raised-button color="primary" (click)="getQualityStatements()">
+          Get quality statements
+        </button>
+        <button *ngIf="responses['qualityStatements']" mat-stroked-button color="warn" (click)="closeResponse('qualityStatements')">
+          Close
+        </button>
+      </div>
+
+      <div class="call-block">
+        <button *ngIf="!responses['combinedData']" mat-raised-button color="primary" (click)="getCombinedData()">
+          Get combined data (static JSON file from backend)
+        </button>
+        <button *ngIf="responses['combinedData']" mat-stroked-button color="warn" (click)="closeResponse('combinedData')">
+          Close
+        </button>
+      </div>
+
+    </div>
+
+    <div *ngIf="loading" class="spinner">
+      <mat-spinner diameter="30"></mat-spinner>
+    </div>
+
+    <div *ngFor="let key of (responses | keyvalue)">
+      <h3>{{ key.key }}</h3>
+      <pre>{{ key.value | json }}</pre>
+    </div>
+  </mat-card>
+</div>

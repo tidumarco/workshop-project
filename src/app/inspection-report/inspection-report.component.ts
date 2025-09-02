@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   MatTableModule
@@ -13,6 +13,7 @@ import {HttpClient} from '@angular/common/http';
 import {ImageUploadComponent} from '../image-upload/image-upload.component';
 import {ComponentClass} from '../models/ComponentClass';
 import {QualityStatementData} from '../models/QualityStatement';
+import {Router} from '@angular/router';
 
 interface CombinedData {
   ComponentTypeID: string;
@@ -47,7 +48,10 @@ export class InspectionReportComponent implements OnInit {
 
   loading = true;
 
-  constructor(private http: HttpClient, public dialog: MatDialog) {}
+  constructor(
+    private http: HttpClient,
+    public dialog: MatDialog,
+    private router: Router ) {}
 
   ngOnInit() {
     this.http.get<CombinedData[]>('http://localhost:8080/api/combined-data').subscribe({
@@ -70,12 +74,16 @@ export class InspectionReportComponent implements OnInit {
     } else {
       newValue = event.target ? event.target.value : null;
     }
-    statement.Values[componentId] = newValue;
+    statement.Values = { ...statement.Values, [componentId]: newValue };
+
+    console.log("DATA UPDATED", statement.Values);
   }
 
   onPictureUploaded(componentId: string, qualityStatementId: number, imageRef: string): void {
     const key = `${componentId}_${qualityStatementId}`;
-    this.imagePreviews[key] = imageRef;
+    this.imagePreviews = { ...this.imagePreviews, [key]: imageRef };
+
+    console.log("IMAGE UPLOADED", this.imagePreviews);
   }
 
   saveReport() {
@@ -101,5 +109,9 @@ export class InspectionReportComponent implements OnInit {
     this.imagePreviews = {};
 
     console.log('Cleared all text fields and images, keeping the table structure:', this.dataSource);
+  }
+
+  goToSampleCalls() {
+    this.router.navigate(['/sample-calls']);
   }
 }

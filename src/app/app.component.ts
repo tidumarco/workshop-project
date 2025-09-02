@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
     this.http.get<ServiceOrder[]>('/assets/serviceOrders.json').subscribe({
       next: (data: ServiceOrder[]) => {
         this.serviceOrders = data;
-        console.log('Service Orders loaded:', this.serviceOrders);
       },
       error: (err: any) => {
         console.error('Error fetching service orders:', err);

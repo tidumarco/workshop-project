@@ -51,6 +51,17 @@
     </table>
   </ng-container>
 
-  <button mat-raised-button class="upload-button" color="primary" (click)="saveReport()">Save Report</button>
+  <div class="action-buttons">
+    <button mat-raised-button
+            class="upload-button"
+            color="primary"
+            (click)="saveReport()">
+      Save Report
+    </button>
+
+    <button mat-raised-button class="view-sample-calls-button" color="primary" (click)="goToSampleCalls()">
+      View Sample Calls
+    </button>
+  </div>
 
 </div>
