@@ -41,7 +41,7 @@
 
       <div class="call-block">
         <button *ngIf="!responses['combinedData']" mat-raised-button color="primary" (click)="getCombinedData()">
-          Get combined data (static JSON file from backend)
+          Get combined data
         </button>
         <button *ngIf="responses['combinedData']" mat-stroked-button color="warn" (click)="closeResponse('combinedData')">
           Close

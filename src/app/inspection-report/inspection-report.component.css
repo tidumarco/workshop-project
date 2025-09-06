@@ -70,3 +70,9 @@ tr.mat-row:last-child {
   font-weight: bold;
 }
 
+.statement-cell {
+  width: 2500px;
+}
+
+
+

@@ -43,7 +43,7 @@ interface CombinedData {
 })
 export class InspectionReportComponent implements OnInit {
   dataSource: CombinedData[] = [];
-  displayedColumns: string[] = ['statement'];
+  displayedColumns: string[] = ['group','statement'];
   imagePreviews: { [componentId_qualityStatementId: string]: string } = {};
 
   loading = true;
@@ -59,7 +59,7 @@ export class InspectionReportComponent implements OnInit {
         this.dataSource = data;
         console.log("DATA LOADED FROM BACKEND:", data)
         if (this.dataSource.length > 0) {
-          this.displayedColumns = ['statement', ...this.dataSource[0].Components.map(c => c.ComponentID.toString())];
+          this.displayedColumns = [...this.displayedColumns, ...this.dataSource[0].Components.map(c => c.ComponentID.toString())];
         }
         this.loading = false;
       },

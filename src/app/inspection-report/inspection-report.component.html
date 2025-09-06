@@ -9,12 +9,12 @@
 
       <ng-container matColumnDef="group">
         <th mat-header-cell *matHeaderCellDef>Group</th>
-        <td mat-cell *matCellDef="let statement"> {{statement.GroupName}} </td>
+        <td mat-cell *matCellDef="let statement">{{statement.GroupName}} </td>
       </ng-container>
 
       <ng-container matColumnDef="statement">
         <th mat-header-cell *matHeaderCellDef>Statement</th>
-        <td mat-cell *matCellDef="let statement"> {{statement.Statement}} </td>
+        <td mat-cell *matCellDef="let statement">{{statement.Statement}} </td>
       </ng-container>
 
       <ng-container *ngFor="let component of block.Components" [matColumnDef]="component.ComponentID.toString()">
